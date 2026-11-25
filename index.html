@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=4">
-  <script src="./wedding.js?v=3" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=5">
+  <script src="./wedding.js?v=4" defer></script>
   <script src="./app.js?v=3" defer></script>
 </head>
 <body>
@@ -23,6 +23,7 @@
       <nav id="navigacia" aria-label="Hlavná navigácia">
         <a href="#program">Program</a>
         <a href="#miesto">Miesta</a>
+        <a href="#oblecenie">Oblečenie</a>
         <a href="#otazky">Otázky</a>
         <a class="nav-reply" href="#rsvp">Potvrdiť účasť</a>
       </nav>
@@ -91,6 +92,21 @@
       </div>
     </section>
 
+    <section id="oblecenie" class="dress" aria-labelledby="dress-title">
+      <div class="wrap section dress-inner">
+        <div class="section-lead">
+          <h2 id="dress-title">Oblečenie <em>a ladenie svadby</em></h2>
+          <p>Zvoľte slávnostné oblečenie, v ktorom sa cítite pohodlne. Ak chcete ladiť s výzdobou, môžete sa inšpirovať týmito farbami.</p>
+        </div>
+        <ul class="dress-palette" role="list" aria-label="Odporúčané farby">
+          <li><span class="dress-swatch" style="--swatch: #efe2cf" aria-hidden="true"></span>Krémová</li>
+          <li><span class="dress-swatch" style="--swatch: #aab59b" aria-hidden="true"></span>Šalviová</li>
+          <li><span class="dress-swatch" style="--swatch: #535e44" aria-hidden="true"></span>Olivová</li>
+          <li><span class="dress-swatch" style="--swatch: #2c3b2c" aria-hidden="true"></span>Tmavá zelená</li>
+        </ul>
+      </div>
+    </section>
+
     <section id="otazky" class="questions section wrap" aria-labelledby="faq-title">
       <div class="section-lead">
         <p class="eyebrow">Pre hostí</p>
@@ -98,7 +114,6 @@
       </div>
       <div class="faq-list" id="faq">
         <details><summary>Kde zaparkujem a kde sa dá ubytovať?</summary><p>Podrobnosti o parkovaní a ubytovaní doplníme pred svadbou.</p></details>
-        <details><summary>Ako sa obliecť?</summary><p>Zvoľte slávnostné oblečenie, v ktorom sa cítite pohodlne.</p></details>
         <details><summary>Chcete sa dohodnúť na menu?</summary><p>Napíšte nám požiadavku do poznámky pri potvrdení účasti, aby sme ju mohli zohľadniť pri výbere menu.</p></details>
       </div>
     </section>

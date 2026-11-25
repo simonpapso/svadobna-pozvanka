@@ -36,7 +36,6 @@ window.wedding = {
   ],
   faq: [
     { question: "Kde zaparkujem a kde sa dá ubytovať?", answer: "Podrobnosti o parkovaní a ubytovaní doplníme pred svadbou." },
-    { question: "Ako sa obliecť?", answer: "Zvoľte slávnostné oblečenie, v ktorom sa cítite pohodlne." },
     { question: "Chcete sa dohodnúť na menu?", answer: "Napíšte nám požiadavku do poznámky pri potvrdení účasti, aby sme ju mohli zohľadniť pri výbere menu." }
   ],
   rsvp: {

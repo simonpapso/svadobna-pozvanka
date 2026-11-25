@@ -104,6 +104,14 @@ h2 em { color: var(--olive); }
 .outline:hover { color: var(--green); background: var(--paper); }
 .venue :focus-visible { outline-color: var(--paper); }
 
+.dress { background: var(--white); border-bottom: 1px solid var(--line); }
+.dress-inner { align-items: center; }
+.dress-inner h2 { margin-top: 0; font-size: clamp(2.55rem, 4.55vw, 4.4rem); text-wrap: balance; }
+.dress-inner .section-lead > p { max-width: 27rem; }
+.dress-palette { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(.45rem, 1.5vw, 1.3rem); margin: 0; padding: 0; list-style: none; }
+.dress-palette li { display: grid; justify-items: center; align-content: start; gap: .7rem; color: var(--muted); font-size: .875rem; line-height: 1.35; text-align: center; }
+.dress-swatch { display: block; width: min(100%, 6.5rem); aspect-ratio: 1; border: 1px solid rgb(37 45 35 / 16%); border-radius: 50%; background: var(--swatch); }
+
 .faq-list { border-top: 1px solid var(--line); }
 details { border-bottom: 1px solid var(--line); }
 summary { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center; padding: 1.15rem 0; font-weight: 700; list-style: none; }
