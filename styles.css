@@ -60,12 +60,10 @@ h1 { margin-block: .8rem 1.3rem; font-size: clamp(3.65rem, 6.5vw, 6.4rem); lette
 .name-pair { white-space: nowrap; }
 h1 em { margin-inline: .2em .25em; color: var(--olive); font-size: .62em; letter-spacing: -.04em; }
 .hero-date { display: flex; justify-content: center; flex-wrap: wrap; gap: .25rem .65rem; font-size: .91rem; font-weight: 700; letter-spacing: .12em; color: var(--green); text-transform: uppercase; }
-.hero-message { max-width: 25rem; margin: 1rem auto 0; font-size: 1.07rem; color: var(--ink); }
 .button { display: inline-flex; align-items: center; justify-content: center; min-height: 3.15rem; padding: .65rem 1.35rem; border: 1px solid transparent; text-decoration: none; font-weight: 700; font-size: .92rem; transition: color .18s, background .18s; }
 .primary { color: var(--white); background: var(--green); }
 .primary:hover { background: #455743; }
 .primary:disabled { opacity: .72; cursor: wait; }
-.hero .button { margin-top: 1.35rem; }
 
 .countdown { background: var(--sage); border-block: 1px solid #d7dcca; }
 .countdown-inner { min-height: 6.9rem; display: flex; justify-content: space-between; align-items: center; gap: 1.4rem; }
@@ -153,7 +151,6 @@ footer .brand { display: inline-block; margin-bottom: .6rem; }
   .hero { --hero-light: ellipse 98% 37%; min-height: calc(var(--header-height) + clamp(34rem, 83svh, 43rem)); }
   .hero-photo { object-position: 36% 54%; }
   h1 { font-size: clamp(2.9rem, 12vw, 5.25rem); margin-block: .65rem .85rem; }
-  .hero-message { max-width: 20rem; }
 }
 @media (max-width: 690px) {
   :root { --header-height: 4.25rem; }
