@@ -6,7 +6,7 @@ Jednostránková slovenská pozvánka s programom, odpočtom, mapou, kalendárom
 
 ## Ako vložiť vlastné údaje
 
-1. Vo [wedding.js](wedding.js) upravte mená, termín, čas, miesto, odkaz na mapu, program, termín na odpoveď a odpovede na otázky hostí. Použite časový posun platný v dátume svadby. Ukážkové údaje v HTML slúžia aj pri vypnutom JavaScripte. Pri zmene údajov upravte aj zodpovedajúce časti v [index.html](index.html).
+1. Vo [wedding.js](wedding.js) upravte mená, termín, čas, miesto, odkaz na mapu, program, termín na odpoveď a odpovede na otázky hostí. Použite časový posun platný v dátume svadby. Kalendár má celodňovú udalosť, kým je `allDay` zapnuté. Po potvrdení programu zadajte časy do `startsAt` a `endsAt` a nastavte `allDay` na `false`. Termín pre odpovede zadajte do `replyDeadline` vo formáte `RRRR-MM-DD`. Pri zmene údajov upravte aj zodpovedajúci obsah pre návštevníkov s vypnutým JavaScriptom v [index.html](index.html).
 2. Vytvorte priečinok `assets`, vložte doň vlastné fotky a nastavte napríklad `src: "./assets/par.jpg"` a `src: "./assets/miesto.jpg"` pri `photos` vo [wedding.js](wedding.js). Pri každej fotografii upravte aj slovný opis v poli `alt`.
 3. Farby sú v premenných na začiatku [styles.css](styles.css). Úvodnú vetu upravíte pri `hero-message` v [index.html](index.html).
 

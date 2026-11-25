@@ -44,7 +44,8 @@ nav a:hover { text-decoration: underline; text-underline-offset: .35em; }
 .eyebrow { display: flex; align-items: center; gap: .65rem; font-size: .875rem; font-weight: 700; letter-spacing: .17em; line-height: 1.4; text-transform: uppercase; color: var(--olive); }
 .eyebrow::before { content: ""; width: 1.7rem; height: 1px; background: currentColor; }
 h1 { margin-block: .8rem 1.6rem; font-size: clamp(4.2rem, 7.75vw, 7.1rem); letter-spacing: -.065em; color: var(--green); line-height: 1.02; }
-h1 span:first-child { display: block; }
+h1 [data-first] { display: block; }
+.name-pair { white-space: nowrap; }
 h1 em { margin-right: .24em; color: var(--olive); font-size: .62em; letter-spacing: -.04em; }
 .hero-date { display: flex; flex-wrap: wrap; gap: .45rem .75rem; font-size: .91rem; font-weight: 700; letter-spacing: .125em; color: var(--olive); text-transform: uppercase; }
 .hero-message { max-width: 25rem; margin-top: 1.2rem; font-size: 1.07rem; color: var(--muted); }
@@ -138,7 +139,7 @@ footer .brand { display: inline-block; margin-bottom: .6rem; }
   .hero { grid-template-columns: 1fr; gap: 2.05rem; padding-block: 2.6rem 1.75rem; }
   .hero-copy { padding-bottom: 0; }
   h1 { font-size: clamp(3.5rem, 13.7vw, 5.5rem); margin-block: .55rem .95rem; }
-  h1 span:first-child { display: inline; }
+  h1 [data-first] { display: inline; }
   h1 em { margin-inline: .16em .21em; }
   .hero-picture { width: min(100%, 28rem); }
   .photo-frame img { aspect-ratio: 1 / .91; }

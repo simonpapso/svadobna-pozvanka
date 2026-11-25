@@ -13,12 +13,13 @@ const numericDate = new Intl.DateTimeFormat("sk-SK", {
   year: "numeric",
   timeZone: wedding.timeZone
 });
-const calendarDate = new Intl.DateTimeFormat("en-CA", {
+const calendarDateFormat = new Intl.DateTimeFormat("en-CA", {
   day: "2-digit",
   month: "2-digit",
   year: "numeric",
   timeZone: wedding.timeZone
-}).format(start);
+});
+const calendarDate = calendarDateFormat.format(start);
 
 function fill(selector, text) {
   document.querySelectorAll(selector).forEach(element => {
@@ -40,9 +41,13 @@ fill("[data-town]", wedding.town);
 fill("[data-date]", weddingDate.format(start));
 fill("[data-date-numeric]", numericDate.format(start));
 document.querySelector("[data-date]").dateTime = calendarDate;
-const deadline = document.querySelector("[data-deadline]");
-deadline.dateTime = wedding.replyDeadline;
-deadline.textContent = weddingDate.format(new Date(`${wedding.replyDeadline}T12:00:00Z`));
+if (wedding.replyDeadline) {
+  const deadline = document.querySelector("[data-deadline]");
+  deadline.dateTime = wedding.replyDeadline;
+  deadline.textContent = weddingDate.format(new Date(`${wedding.replyDeadline}T12:00:00Z`));
+  document.querySelector("#deadline-pending").hidden = true;
+  document.querySelector("#deadline-confirmed").hidden = false;
+}
 
 for (const mark of document.querySelectorAll("[data-monogram]")) {
   const first = Array.from(wedding.firstName)[0];
@@ -127,6 +132,12 @@ function calendarTime(date) {
   return date.toISOString().replace(/[-:]|\.\d{3}/g, "");
 }
 
+function calendarEventTime(property, date) {
+  return wedding.allDay
+    ? `${property};VALUE=DATE:${calendarDateFormat.format(date).replaceAll("-", "")}`
+    : `${property}:${calendarTime(date)}`;
+}
+
 function foldCalendarLine(line) {
   const encoder = new TextEncoder();
   let size = 0;
@@ -149,8 +160,8 @@ calendar.addEventListener("click", () => {
   const content = [
     "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Svadobna pozvanka//SK",
     "BEGIN:VEVENT", `UID:svadba-${calendarDate}@${location.host || "local"}`,
-    `DTSTAMP:${calendarTime(new Date())}`, `DTSTART:${calendarTime(start)}`,
-    `DTEND:${calendarTime(end)}`, `SUMMARY:${icsText(`Svadba • ${wedding.firstName} a ${wedding.secondName}`)}`,
+    `DTSTAMP:${calendarTime(new Date())}`, calendarEventTime("DTSTART", start),
+    calendarEventTime("DTEND", end), `SUMMARY:${icsText(`Svadba • ${wedding.firstName} a ${wedding.secondName}`)}`,
     `LOCATION:${icsText(`${wedding.venue.name}, ${wedding.venue.location}`)}`,
     "END:VEVENT", "END:VCALENDAR", ""
   ].map(foldCalendarLine).join("\r\n");
