@@ -33,6 +33,7 @@ function makeElement(tag, text) {
 }
 
 document.title = `${wedding.firstName} & ${wedding.secondName} — Svadobná pozvánka`;
+document.querySelector("#names").setAttribute("aria-label", `${wedding.firstName} a ${wedding.secondName}`);
 fill("[data-first]", wedding.firstName);
 fill("[data-second]", wedding.secondName);
 fill("[data-town]", wedding.town);
