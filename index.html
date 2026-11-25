@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Svadobná pozvánka s programom, miestom oslavy a potvrdením účasti.">
+  <meta name="theme-color" content="#f8f4ea">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Laura &amp; Adam — Svadobná pozvánka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./wedding.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#uvod">Preskočiť na obsah</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#uvod" data-monogram aria-label="Na úvod">L <span>&amp;</span> A</a>
+      <button class="menu-toggle" type="button" aria-controls="navigacia" aria-expanded="false" hidden>Menu</button>
+      <nav id="navigacia" aria-label="Hlavná navigácia">
+        <a href="#program">Program</a>
+        <a href="#miesto">Miesto</a>
+        <a href="#otazky">Otázky</a>
+        <a class="nav-reply" href="#rsvp">Potvrdiť účasť</a>
+      </nav>
+    </div>
+  </header>
+  <main id="uvod">
+    <section class="hero wrap" aria-labelledby="names">
+      <div class="hero-copy">
+        <p class="eyebrow">Svadobná pozvánka</p>
+        <h1 id="names"><span data-first>Laura</span><em>&amp;</em><span data-second>Adam</span></h1>
+        <p class="hero-date"><time data-date datetime="2027-09-18">18. septembra 2027</time><span aria-hidden="true">·</span><span data-town>Modra</span></p>
+        <p class="hero-message">Budeme sa brať! Príďte s nami osláviť deň, na ktorý sa najviac tešíme.</p>
+        <a class="button primary" href="#rsvp">Potvrdiť účasť</a>
+      </div>
+      <figure class="hero-picture">
+        <div class="photo-frame">
+          <img data-photo="couple" alt="Ilustračná fotografia svadobného páru na kamennom nádvorí" fetchpriority="high" width="620" height="760">
+        </div>
+        <figcaption><span data-date-numeric>18. 09. 2027</span><span class="caption-line" aria-hidden="true"></span><span data-town>Modra</span></figcaption>
+      </figure>
+    </section>
+
+    <div class="countdown" data-countdown hidden>
+      <div class="wrap countdown-inner" role="timer" aria-label="Odpočet do svadby">
+        <p>Do nášho <em>áno</em> zostáva</p>
+        <div class="count-units">
+          <span><b data-days>–</b> dní</span>
+          <span><b data-hours>–</b> hodín</span>
+          <span><b data-minutes>–</b> minút</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="program" class="schedule section wrap" aria-labelledby="program-title">
+      <div class="section-lead">
+        <p class="eyebrow">Program</p>
+        <h2 id="program-title">Ako bude<br>plynúť <em>deň</em></h2>
+        <p>Od prvého stretnutia v záhrade až po posledný tanec.</p>
+        <button class="text-action" id="calendar" type="button" hidden>Pridať do kalendára</button>
+      </div>
+      <ol class="timeline" id="timeline">
+        <li><time>14:30</time><div><h3>Príchod hostí</h3><p>Stretneme sa v záhrade pri welcome drinku.</p></div></li>
+        <li><time>15:30</time><div><h3>Svadobný obrad</h3><p>Svoje áno si povieme pod lipami.</p></div></li>
+        <li><time>17:00</time><div><h3>Svadobná hostina</h3><p>Prípitok, večera a chvíľa na rozhovory pri stole.</p></div></li>
+        <li><time>19:30</time><div><h3>Prvý tanec</h3><p>Potom je parket váš.</p></div></li>
+      </ol>
+    </section>
+
+    <section id="miesto" class="venue" aria-labelledby="venue-title">
+      <div class="wrap venue-inner">
+        <div class="venue-picture"><img data-photo="venue" alt="Ilustračná fotografia svadobnej hostiny v záhrade" loading="lazy" width="760" height="620"></div>
+        <div class="venue-copy">
+          <p class="eyebrow">Miesto</p>
+          <h2 id="venue-title" data-venue>Záhrada pod lipami</h2>
+          <p class="venue-town" data-location>Modra, Malé Karpaty</p>
+          <p data-venue-note>Obrad aj hostina budú na jednom mieste. Na obrad sa stretneme v záhrade a večer sa presunieme pod strechu.</p>
+          <a class="button outline" data-map href="https://www.google.com/maps/search/?api=1&amp;query=Modra%2C%20Slovensko" target="_blank" rel="noopener noreferrer">Otvoriť mapu</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="otazky" class="questions section wrap" aria-labelledby="faq-title">
+      <div class="section-lead">
+        <p class="eyebrow">Pre hostí</p>
+        <h2 id="faq-title">Dobré <em>vedieť</em></h2>
+      </div>
+      <div class="faq-list" id="faq">
+        <details><summary>Kde zaparkujem a kde sa dá ubytovať?</summary><p>Parkovať budeme pri vstupe do areálu. Ak ostávate na noc, ubytovanie hľadajte v Modre alebo v neďalekom Pezinku.</p></details>
+        <details><summary>Ako sa obliecť?</summary><p>Zvoľte slávnostné oblečenie, v ktorom sa cítite pohodlne. Obrad bude na tráve a večer sa môže ochladiť.</p></details>
+        <details><summary>Čo ak bude pršať?</summary><p>Obrad presunieme pod strechu v rovnakom areáli. Čas aj miesto príchodu ostanú rovnaké.</p></details>
+        <details><summary>Mám potravinovú alergiu. Komu ju oznámiť?</summary><p>Napíšte nám ju do poznámky pri potvrdení účasti, aby sme ju mohli zohľadniť pri výbere menu.</p></details>
+      </div>
+    </section>
+
+    <section id="rsvp" class="reply" aria-labelledby="rsvp-title">
+      <div class="wrap reply-inner">
+        <div class="reply-copy">
+          <p class="eyebrow">Potvrdenie účasti</p>
+          <h2 id="rsvp-title">Oslávite to<br><em>s nami?</em></h2>
+          <p>Odpovedzte, prosím, do <strong><time data-deadline datetime="2027-08-31">31. augusta 2027</time></strong>.</p>
+        </div>
+        <div class="form-panel">
+          <noscript><p>Na použitie formulára povoľte v prehliadači JavaScript.</p></noscript>
+          <form id="reply-form" aria-describedby="form-note" hidden>
+            <p id="form-note" class="form-note">Ukážkový formulár. Odpoveď sa nikam neposiela.</p>
+            <label for="guest">Meno a priezvisko</label>
+            <input id="guest" name="name" autocomplete="name" required maxlength="120">
+            <fieldset>
+              <legend>Zúčastníte sa?</legend>
+              <div class="choices">
+                <label><input type="radio" name="attendance" value="yes" required> Áno, prídem</label>
+                <label><input type="radio" name="attendance" value="no" required> Žiaľ, neprídem</label>
+              </div>
+            </fieldset>
+            <div id="party-field" hidden>
+              <label for="party">Počet osôb vrátane vás</label>
+              <select id="party" name="partySize" disabled><option value="1">1 osoba</option><option value="2">2 osoby</option><option value="3">3 osoby</option><option value="4">4 osoby</option></select>
+            </div>
+            <label for="note">Stravovanie alebo odkaz <span>(voliteľné)</span></label>
+            <textarea id="note" name="note" rows="3" maxlength="500"></textarea>
+            <button class="button primary submit" type="submit">Vyskúšať odpoveď</button>
+            <p id="reply-status" class="status" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <a class="brand" href="#uvod" data-monogram aria-label="Späť na úvod">L <span>&amp;</span> A</a>
+    <p>Tešíme sa na vás!</p>
+    <p id="demo-notice" class="demo-notice">Ukážková pozvánka s vymyslenými údajmi a ilustračnými fotografiami.</p>
+  </footer>
+</body>
+</html>
