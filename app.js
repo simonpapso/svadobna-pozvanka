@@ -7,12 +7,6 @@ const weddingDate = new Intl.DateTimeFormat("sk-SK", {
   dateStyle: "long",
   timeZone: wedding.timeZone
 });
-const numericDate = new Intl.DateTimeFormat("sk-SK", {
-  day: "2-digit",
-  month: "2-digit",
-  year: "numeric",
-  timeZone: wedding.timeZone
-});
 const calendarDateFormat = new Intl.DateTimeFormat("en-CA", {
   day: "2-digit",
   month: "2-digit",
@@ -37,9 +31,8 @@ document.title = `${wedding.firstName} & ${wedding.secondName} — Svadobná poz
 document.querySelector("#names").setAttribute("aria-label", `${wedding.firstName} a ${wedding.secondName}`);
 fill("[data-first]", wedding.firstName);
 fill("[data-second]", wedding.secondName);
-fill("[data-town]", wedding.town);
+fill("[data-place-summary]", wedding.placeSummary);
 fill("[data-date]", weddingDate.format(start));
-fill("[data-date-numeric]", numericDate.format(start));
 document.querySelector("[data-date]").dateTime = calendarDate;
 if (wedding.replyDeadline) {
   const deadline = document.querySelector("[data-deadline]");
@@ -55,23 +48,33 @@ for (const mark of document.querySelectorAll("[data-monogram]")) {
   mark.replaceChildren(`${first} `, makeElement("span", "&"), ` ${second}`);
 }
 
-fill("[data-venue]", wedding.venue.name);
-fill("[data-location]", wedding.venue.location);
-fill("[data-venue-note]", wedding.venue.note);
-document.querySelector("[data-map]").href = wedding.venue.mapUrl;
+for (const section of document.querySelectorAll("[data-place]")) {
+  const place = wedding[section.dataset.place];
+  section.querySelector("[data-place-name]").textContent = place.name;
+  section.querySelector("[data-place-address]").textContent = place.location;
+  section.querySelector("[data-map]").href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.mapQuery)}`;
+}
+
+const origin = encodeURIComponent(wedding.ceremony.mapQuery);
+const destination = encodeURIComponent(wedding.reception.mapQuery);
+document.querySelector("[data-route]").href = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${destination}&travelmode=driving`;
+
 document.querySelectorAll("[data-photo]").forEach(img => {
   const photo = wedding.photos[img.dataset.photo];
   img.alt = photo.alt;
-  img.src = photo.src;
+  if (img.getAttribute("src") !== photo.src) img.src = photo.src;
 });
 
 const schedule = wedding.schedule.map(({ time, title, description }) => {
   const item = document.createElement("li");
-  const clock = makeElement("time", time);
-  clock.dateTime = time;
+  if (time) {
+    const clock = makeElement("time", time);
+    clock.dateTime = time;
+    item.append(clock);
+  }
   const event = document.createElement("div");
   event.append(makeElement("h3", title), makeElement("p", description));
-  item.append(clock, event);
+  item.append(event);
   return item;
 });
 document.querySelector("#timeline").replaceChildren(...schedule);
@@ -162,7 +165,8 @@ calendar.addEventListener("click", () => {
     "BEGIN:VEVENT", `UID:svadba-${calendarDate}@${location.host || "local"}`,
     `DTSTAMP:${calendarTime(new Date())}`, calendarEventTime("DTSTART", start),
     calendarEventTime("DTEND", end), `SUMMARY:${icsText(`Svadba • ${wedding.firstName} a ${wedding.secondName}`)}`,
-    `LOCATION:${icsText(`${wedding.venue.name}, ${wedding.venue.location}`)}`,
+    `LOCATION:${icsText(`${wedding.ceremony.name}, ${wedding.ceremony.location}`)}`,
+    `DESCRIPTION:${icsText(`Svadobná hostina po obrade – ${wedding.reception.name}, ${wedding.reception.location}.`)}`,
     "END:VEVENT", "END:VCALENDAR", ""
   ].map(foldCalendarLine).join("\r\n");
   const url = URL.createObjectURL(new Blob([content], { type: "text/calendar;charset=utf-8" }));

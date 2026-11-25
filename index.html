@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Svadobná pozvánka s programom, miestom oslavy a potvrdením účasti.">
+  <meta name="description" content="Svadba Janky a Šimona. Obrad vo Sverepci, hostina v Kursalone v Nimnici a informácie pre hostí.">
   <meta name="theme-color" content="#f8f4ea">
   <meta name="robots" content="noindex, nofollow">
   <title>Janka &amp; Šimon — Svadobná pozvánka</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=2">
-  <script src="./wedding.js?v=2" defer></script>
-  <script src="./app.js?v=2" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=3">
+  <script src="./wedding.js?v=3" defer></script>
+  <script src="./app.js?v=3" defer></script>
 </head>
 <body>
   <a class="skip" href="#uvod">Preskočiť na obsah</a>
@@ -22,27 +22,24 @@
       <button class="menu-toggle" type="button" aria-controls="navigacia" aria-expanded="false" hidden>Menu</button>
       <nav id="navigacia" aria-label="Hlavná navigácia">
         <a href="#program">Program</a>
-        <a href="#miesto">Miesto</a>
+        <a href="#miesto">Miesta</a>
         <a href="#otazky">Otázky</a>
         <a class="nav-reply" href="#rsvp">Potvrdiť účasť</a>
       </nav>
     </div>
   </header>
   <main id="uvod">
-    <section class="hero wrap" aria-labelledby="names">
-      <div class="hero-copy">
-        <p class="eyebrow">Svadobná pozvánka</p>
-        <h1 id="names" aria-label="Janka a Šimon"><span data-first>Janka</span><wbr><span class="name-pair"><em>&amp;</em><span data-second>Šimon</span></span></h1>
-        <p class="hero-date"><time data-date datetime="2027-06-19">19. júna 2027</time><span aria-hidden="true">·</span><span data-town>Nimnica</span></p>
-        <p class="hero-message">Budeme sa brať! Príďte s nami osláviť deň, na ktorý sa najviac tešíme.</p>
-        <a class="button primary" href="#rsvp">Potvrdiť účasť</a>
-      </div>
-      <figure class="hero-picture">
-        <div class="photo-frame">
-          <img data-photo="couple" alt="Ilustračná fotografia svadobného páru na kamennom nádvorí" fetchpriority="high" width="620" height="760">
+    <section class="hero" aria-labelledby="names">
+      <img class="hero-photo" data-photo="couple" src="https://images.pexels.com/photos/5086370/pexels-photo-5086370.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=2000" alt="Ilustračná svadobná fotografia páru na lúke" fetchpriority="high" width="2000" height="1333">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Svadobná pozvánka</p>
+          <h1 id="names" aria-label="Janka a Šimon"><span data-first>Janka</span><wbr><span class="name-pair"><em>&amp;</em><span data-second>Šimon</span></span></h1>
+          <p class="hero-date"><time data-date datetime="2027-06-19">19. júna 2027</time><span aria-hidden="true">·</span><span data-place-summary>Sverepec a Nimnica</span></p>
+          <p class="hero-message">Budeme sa brať! Príďte s nami osláviť deň, na ktorý sa najviac tešíme.</p>
+          <a class="button primary" href="#rsvp">Potvrdiť účasť</a>
         </div>
-        <figcaption><span data-date-numeric>19. 06. 2027</span><span class="caption-line" aria-hidden="true"></span><span data-town>Nimnica</span></figcaption>
-      </figure>
+      </div>
     </section>
 
     <div class="countdown" data-countdown hidden>
@@ -60,14 +57,13 @@
       <div class="section-lead">
         <p class="eyebrow">Program</p>
         <h2 id="program-title">Ako bude<br> plynúť <em>deň</em></h2>
-        <p>Časy v programe sú zatiaľ orientačné.</p>
+        <p>Presné časy doplníme pred svadbou.</p>
         <button class="text-action" id="calendar" type="button" hidden>Pridať do kalendára</button>
       </div>
-      <ol class="timeline" id="timeline">
-        <li><time>14:30</time><div><h3>Príchod hostí</h3><p>Stretneme sa pri welcome drinku.</p></div></li>
-        <li><time>15:30</time><div><h3>Svadobný obrad</h3><p>Povieme si áno.</p></div></li>
-        <li><time>17:00</time><div><h3>Svadobná hostina</h3><p>Prípitok, večera a chvíľa na rozhovory pri stole.</p></div></li>
-        <li><time>19:30</time><div><h3>Prvý tanec</h3><p>Potom je parket váš.</p></div></li>
+      <ol class="timeline" id="timeline" role="list">
+        <li><div><h3>Svadobný obrad</h3><p>Stretneme sa v Kostole Najsvätejšej Trojice vo Sverepci.</p></div></li>
+        <li><div><h3>Presun do Nimnice</h3><p>Po obrade sa presunieme zo Sverepca do Kursalonu v Kúpeľoch Nimnica.</p></div></li>
+        <li><div><h3>Svadobná hostina</h3><p>V Kursalone si spolu pripijeme a oslávime svadbu.</p></div></li>
       </ol>
     </section>
 
@@ -75,11 +71,22 @@
       <div class="wrap venue-inner">
         <div class="venue-picture"><img data-photo="venue" alt="Ilustračná fotografia svadobnej hostiny v záhrade" loading="lazy" width="760" height="620"></div>
         <div class="venue-copy">
-          <p class="eyebrow">Miesto</p>
-          <h2 id="venue-title" data-venue>Kursalon</h2>
-          <p class="venue-town" data-location>Kúpele Nimnica, 020 71 Nimnica</p>
-          <p data-venue-note>Stretneme sa v Kursalone v areáli Kúpeľov Nimnica.</p>
-          <a class="button outline" data-map href="https://www.google.com/maps/search/?api=1&amp;query=Kursalon%2C%20K%C3%BApele%20Nimnica" target="_blank" rel="noopener noreferrer">Otvoriť mapu</a>
+          <h2 id="venue-title">Kde sa stretneme</h2>
+          <div class="venue-places">
+            <article data-place="ceremony">
+              <p class="place-type">Obrad</p>
+              <h3 data-place-name>Kostol Najsvätejšej Trojice</h3>
+              <p data-place-address>Sverepec, 017 01</p>
+              <a class="venue-link" data-map href="https://www.google.com/maps/search/?api=1&amp;query=Kostol%20Najsv%C3%A4tej%C5%A1ej%20Trojice%2C%20Sverepec" target="_blank" rel="noopener noreferrer">Mapa kostola</a>
+            </article>
+            <article data-place="reception">
+              <p class="place-type">Hostina</p>
+              <h3 data-place-name>Kursalon</h3>
+              <p data-place-address>Kúpele Nimnica 106, 020 71 Nimnica</p>
+              <a class="venue-link" data-map href="https://www.google.com/maps/search/?api=1&amp;query=Kursalon%2C%20K%C3%BApele%20Nimnica" target="_blank" rel="noopener noreferrer">Mapa Kursalonu</a>
+            </article>
+          </div>
+          <a class="button outline" data-route href="https://www.google.com/maps/dir/?api=1&amp;origin=Kostol%20Najsv%C3%A4tej%C5%A1ej%20Trojice%2C%20Sverepec&amp;destination=Kursalon%2C%20K%C3%BApele%20Nimnica&amp;travelmode=driving" target="_blank" rel="noopener noreferrer">Trasa z kostola do Kursalonu</a>
         </div>
       </div>
     </section>
