@@ -34,7 +34,7 @@ section[id] { scroll-margin-top: 1.25rem; }
 .header-inner { width: min(100% - 7rem, 82rem); min-height: var(--header-height); margin: auto; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; }
 .brand { font: 500 1.65rem/1.15 var(--serif); text-decoration: none; white-space: nowrap; color: var(--green); }
 .brand span { color: var(--olive); font-size: .81em; font-style: italic; }
-nav { display: flex; align-items: center; gap: clamp(1.25rem, 3vw, 2.75rem); }
+nav { display: flex; align-items: center; gap: clamp(1rem, 2.45vw, 2.75rem); }
 nav a, .menu-toggle { font-size: .9rem; font-weight: 600; text-decoration: none; }
 nav a:hover { text-decoration: underline; text-underline-offset: .35em; }
 .nav-reply { border: 1px solid var(--olive); padding: .51rem 1rem; }
@@ -101,6 +101,18 @@ h2 em { color: var(--olive); }
 .outline { color: var(--paper); border-color: #b8c1a8; margin-top: 1.45rem; }
 .outline:hover { color: var(--green); background: var(--paper); }
 .venue :focus-visible { outline-color: var(--paper); }
+
+.feast { border-bottom: 1px solid var(--line); }
+.feast h2 { margin-top: 0; }
+.course-list {
+  margin: 0;
+  padding: clamp(1.2rem, 3.7vw, 2.75rem);
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+.course-list div + div { margin-top: .95rem; padding-top: .95rem; border-top: 1px solid var(--line); }
+.course-list dt { color: var(--olive); font-size: .875rem; font-weight: 700; letter-spacing: .12em; line-height: 1.4; text-transform: uppercase; }
+.course-list dd { margin: .32rem 0 0; color: var(--green); font: 400 clamp(1.1rem, 2vw, 1.4rem)/1.4 var(--serif); }
 
 .dress { background: var(--white); border-bottom: 1px solid var(--line); }
 .dress-inner { align-items: center; }
